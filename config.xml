@@ -4,9 +4,9 @@
 		id        = "com.yourdomainname.com"
 		versionCode="1"
 		version   = "1">
-		<name>App Title</name>
+		<name>PhotoLoco</name>
 		<description>
-                    App Description in 1-2 sentences
+                    Share Pictures Where you Are
 		</description>
 		<author href="domainname.com" email="email@email.com">
                     Your Name
