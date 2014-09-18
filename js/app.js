@@ -1,3 +1,10 @@
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+	console.log("onDeviceReady()");
+	navigator.geolocation.getCurrentPosition(generateMap, onError);
+}
+
 function capturePhoto(){
 
 navigator.camera.getPicture(uploadPhoto, null, { sourceType:1,quality: 50});
