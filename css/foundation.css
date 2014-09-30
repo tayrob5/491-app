@@ -95,6 +95,16 @@ img {
 img {
   display: inline-block;
   vertical-align: middle; }
+  
+ .crop {
+ height: 300px;
+ width: 350px;
+ overflow: hidden;
+}
+.crop img {
+ height: auto;
+ width: 350px;
+}
 
 textarea {
   height: auto;

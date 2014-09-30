@@ -13,7 +13,7 @@
   </head>
   <body>
   
-    <div class="icon-bar four-up">
+    <div class="icon-bar three-up">
   <a  href="index.html" class="item">
     <i class="fa fa-home"></i> 
     <label>Home</label>
@@ -23,10 +23,7 @@
     <label>Add Picture</label>
     
   </a>
-  <a class="item" href="view.html">
-    <i class="fa fa-location-arrow"></i>
-    <label>See Location</label>
-  </a>
+
   <a class="item" href="contact.html">
     <i class="fa fa-envelope"></i>
     <label>Contact Us</label>
@@ -44,7 +41,7 @@
       <div class="large-12 columns">
       	<div class="panel"> 
 	        <h3></h3>
-	        <center<p>Great! We're pumped you want to share a photo. Keep in mind, the photo will only be displayed for 12 hours and will only be viewable at this location. Use the form below to submit.</p></center>
+	        <center<p>Great! We're pumped you want to share a photo. Keep in mind, the photo will only be displayed for 24 hours near this location.</p></center>
 	        
 	        	</div>        
 					</div>
@@ -61,6 +58,11 @@
                     <h5>Submit A Photo</h5>
 				      <label>Upload Photo</label>
 				      <input type="file" placeholder="" />
+                      
+                      <div id="camera>
+    	<button class="camera-control" onclick="capturePhoto();">Capture Photo</button>
+        <img id="cameraPic" src="" style="width:auto;height:120px;"></img>
+        </div>
 				    </div>
 				  </div>
 				  <div class="row">
