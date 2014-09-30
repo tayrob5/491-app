@@ -19,7 +19,6 @@
 		<preference name="orientation" value="default" />
 		<preference name="fullscreen" value=“false” />
 		<preference name="target-device" value=“universal” />
-		<preference name=“UIWebViewBounce” value=“false” />
 		<preference name="DisallowOverscroll" value="true" />
 		<preference name="prerendered-icon" value="true" />
 		<preference name="stay-in-webview" value="true" />
