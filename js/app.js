@@ -16,4 +16,8 @@ function uploadPhoto(data){
 	    'Photo Uploaded',              // title
 	    'OK'                          // buttonName
 	);
-}// JavaScript Document
+}
+
+function okay(message) {
+    
+}
