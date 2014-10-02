@@ -58,6 +58,7 @@
 		<feature name="http://api.phonegap.com/1.0/media"/>
 		<feature name="http://api.phonegap.com/1.0/notification"/>
 		<gap:plugin name="org.apache.cordova.camera"  />
+		<plugin name="Camera" value="CDVCamera" />
 		<gap:plugin name="org.apache.cordova.contacts"  />
 		<gap:plugin name="org.apache.cordova.device-orientation"  />
 		<gap:plugin name="org.apache.cordova.device-motion"  />
