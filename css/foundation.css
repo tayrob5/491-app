@@ -109,6 +109,27 @@ img {
 textarea {
   height: auto;
   min-height: 50px; }
+  
+  div.fileinputs {
+	position: relative;
+}
+
+div.fakefile {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+
+input.file {
+	position: relative;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+}
+
 
 select {
   width: 100%; }
@@ -6044,3 +6065,24 @@ th.hide-for-touch {
 
   th.show-for-print {
     display: table-cell !important; } }
+	
+	.circles{
+		position: relative;
+		margin-bottom: 1.2cm;
+		
+	}
+	
+	.circle-left{
+		
+		position: absolute;
+		top: 5px;
+		left: 10px;
+		
+	}
+	
+	.circle-right{
+		position: absolute;
+		top: 0px;
+		right: 10px;
+		
+	}
