@@ -1,6 +1,11 @@
 function capturePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(uploadPhoto,null,{sourceType:2,quality:60});
+    navigator.camera.getPicture(uploadPhoto,null,{sourceType:1,quality:60});
+}   
+
+function choosePhoto(){
+        //alert("capture button working");
+    navigator.camera.getPicture(uploadPhoto,null,{sourceType:0,quality:60});
 }   
 
 function uploadPhoto(data){
