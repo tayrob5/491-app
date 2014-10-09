@@ -41,9 +41,7 @@ var NoteOb = Parse.Object.extend("photos");
  
 	var imagedata = "";
  
-	$("#submitBtn").on("touchend", function(e) {
-		e.preventDefault();
-		//$(this).attr("disabled","disabled").button("refresh");
+	function submitButton(){
  
 		var caption = $("#caption").val();
 		if(caption == '') return;
@@ -84,7 +82,7 @@ var NoteOb = Parse.Object.extend("photos");
 			cleanUp();
  
 		}
-	});
+	}
 	
 	function capturePhoto(){
         //alert("capture button working");
