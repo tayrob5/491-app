@@ -38,8 +38,13 @@ var NoteOb = Parse.Object.extend("photos");
 
  
 //$(document).on("pageshow", "upload.html", function(e, ui) {
- 
+ document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+	console.log("onDeviceReady()");
 	var imagedata = "";
+}
+	
  
 	function submitBtn(){
 		
