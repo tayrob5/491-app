@@ -6,7 +6,7 @@ Parse.initialize(parseAPPID,parseJSID);
  
 var NoteOb = Parse.Object.extend("photos");
  
-$(document).on("pageshow", "index.html", function(e, ui) {
+/*$(document).on("pageshow", "index.html", function(e, ui) {
   $.mobile.loading("show");
  
 	var query = new Parse.Query(NoteOb);
@@ -34,7 +34,8 @@ $(document).on("pageshow", "index.html", function(e, ui) {
  
 		}
 	});
-});
+});*/
+
  
 $(document).on("pageshow", "upload.html", function(e, ui) {
  
@@ -85,12 +86,6 @@ $(document).on("pageshow", "upload.html", function(e, ui) {
 		}
 	});
  
-	$("#takePicBtn").on("click", function(e) {
-		e.preventDefault();
-		navigator.camera.getPicture(gotPic, failHandler, 
-			{quality:50, destinationType:navigator.camera.DestinationType.DATA_URL,
-			 sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY});
-	});
 	
 	function gotPic(data) {
 		console.log('got here');
@@ -115,28 +110,14 @@ $(document).on("pageshow", "upload.html", function(e, ui) {
 
 function capturePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,null,{sourceType:1,quality:50});
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:1,quality:60});
 }   
 
 function choosePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,null,{sourceType:0,quality:50});
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0,quality:60});
 }   
 
-function uploadPhoto(data){
-// this is where you would send the image file to server
-
-
-    cameraPic.src = data;
-	//cameraPic.src = "data:image/jpeg;base64," + data;
-	// Successful upload to the server
-	navigator.notification.alert(
-		'Your Photo has been uploaded',  // message
-		okay,                           // callback
-	    'Photo Uploaded',              // title
-	    'OK'                          // buttonName
-	);
-}
 
 function okay(message) {
     
