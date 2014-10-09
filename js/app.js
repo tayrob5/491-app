@@ -85,6 +85,16 @@ $(document).on("pageshow", "upload.html", function(e, ui) {
  
 		}
 	});
+	
+	function capturePhoto(){
+        //alert("capture button working");
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:1,quality:60});
+}   
+
+function choosePhoto(){
+        //alert("capture button working");
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0,quality:60});
+}  
  
 	
 	function gotPic(data) {
@@ -108,15 +118,7 @@ $(document).on("pageshow", "upload.html", function(e, ui) {
  
 });
 
-function capturePhoto(){
-        //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:1,quality:60});
-}   
-
-function choosePhoto(){
-        //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0,quality:60});
-}   
+ 
 
 
 function okay(message) {
