@@ -115,18 +115,12 @@ $(document).on("pageshow", "upload.html", function(e, ui) {
 
 function capturePhoto(){
         //alert("capture button working");
-    e.preventDefault();
-		navigator.camera.getPicture(gotPic, failHandler, 
-			{quality:50, destinationType:navigator.camera.DestinationType.DATA_URL,
-			 sourceType:navigator.camera.PictureSourceType.CAMERA});
+    navigator.camera.getPicture(gotPic,null,{sourceType:1,quality:50});
 }   
 
 function choosePhoto(){
         //alert("capture button working");
-   e.preventDefault();
-		navigator.camera.getPicture(gotPic, failHandler, 
-			{quality:50, destinationType:navigator.camera.DestinationType.DATA_URL,
-			 sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY});
+    navigator.camera.getPicture(gotPic,null,{sourceType:0,quality:50});
 }   
 
 function uploadPhoto(data){
