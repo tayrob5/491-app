@@ -99,7 +99,7 @@ function onDeviceReady() {
 	
 	function capturePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:1,quality:60});
+    navigator.camera.getPicture(gotPic,failHandler,{quality:50, destinationType:navigator.camera.DestinationType.DATA_URL, sourceType:navigator.camera.PictureSourceType.CAMERA});
 }   
 
 function choosePhoto(){
