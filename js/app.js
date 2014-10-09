@@ -37,7 +37,7 @@ var NoteOb = Parse.Object.extend("photos");
 });*/
 
  
-$(document).on("pageshow", "upload.html", function(e, ui) {
+//$(document).on("pageshow", "upload.html", function(e, ui) {
  
 	var imagedata = "";
  
@@ -116,7 +116,7 @@ function choosePhoto(){
 		//$("#takePicBtn").text("Add Pic").button("refresh");
 	}
  
-});
+//});
 
  
 
