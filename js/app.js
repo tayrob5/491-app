@@ -41,7 +41,7 @@ var NoteOb = Parse.Object.extend("photos");
  
 	var imagedata = "";
  
-	function submitButton(){
+	function submitBtn(){
  
 		var caption = $("#caption").val();
 		if(caption == '') return;
