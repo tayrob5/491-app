@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<widget xmlns = "http://www.w3.org/ns/widgets"
-		xmlns:gap = "http://phonegap.com/ns/1.0"
-		id        = "com.PhotoLoco.com"
-		versionCode="1"
-		version   = "1">
-		<name>Photo Loco</name>
-		<description>
-Pictures from around where you are		</description>
-
-                
-                <access origin="*" subdomains="true" />
-                
+	    <widget id="com.photoloco" version="0.5.8">
+        <name>Photo Loco</name>
+        <description>
+            Share pictures where you are, anonymously. 
+        </description>
+        <author email="taylorrobinette@gmail.com" href="http://taylorrobinette.com">
+            Taylor Robinette
+        </author>
+        <content src="index.html" />
+        <access origin="*" /> 
                 
 		<preference name="phonegap-version" value="3.5.0" />
 		<preference name="orientation" value="default" />
 		<preference name="fullscreen" value="false" />
 		<preference name="target-device" value="universal" />
 		<preference name="webviewbounce" value="false" />
-		<preference name="DisallowOverscroll" value="true" />
+		<preference name="DisallowOverscroll" value="true"/>
 		
 		<preference name="CameraUsesGeolocation" value=“true” />
 		<preference name="prerendered-icon" value="true" />
@@ -41,7 +39,6 @@ Pictures from around where you are		</description>
 		<preference name="ErrorUrl" value=""/>
 		<preference name="BackgroundColor" value="0x000000"/>
 		<preference name="KeepRunning" value="true"/>
-		<preference name="DisallowOverscroll" value="false"/>
 		<preference name="LoadingDialog" value=","/> 
 		<preference name="LoadUrlTimeoutValue" value="20000" />
 		<preference name="disable-cursor" value="false" />
