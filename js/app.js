@@ -57,7 +57,7 @@ function onDeviceReady() {
 		var NoteOb = Parse.Object.extend("photos");
 		 
 		var caption = $("#caption").val();
-		if(caption == '') return;
+		if (imagedata = "") return;
  
 		/*
 		A bit complex - we have to handle an optional pic save
@@ -99,12 +99,12 @@ function onDeviceReady() {
 	
 	function capturePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{quality:50, destinationType:0, sourceType:1});
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:1, quality:50, destinationType:0 });
 }   
 
 function choosePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:60});
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:50});
 }  
  
 	
