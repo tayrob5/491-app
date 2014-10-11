@@ -37,16 +37,26 @@ var NoteOb = Parse.Object.extend("photos");
 });*/
 
  
-$(document).on("pageshow", "upload.html", function(e, ui) {
- 
+//$(document).on("pageshow", "upload.html", function(e, ui) {
+ document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+	console.log("onDeviceReady()");
 	var imagedata = "";
+}
+	
  
-	$("#submitBtn").on("touchend", function(e) {
-		e.preventDefault();
-		//$(this).attr("disabled","disabled").button("refresh");
+	function submitBtn(){
+		
+		var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
+		var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
  
+		//Initialize Parse
+		Parse.initialize(parseAPPID,parseJSID);
+		 
+		var NoteOb = Parse.Object.extend("photos");
+		 
 		var caption = $("#caption").val();
-		if(caption == '') return;
  
 		/*
 		A bit complex - we have to handle an optional pic save
@@ -84,7 +94,22 @@ $(document).on("pageshow", "upload.html", function(e, ui) {
 			cleanUp();
  
 		}
-	});
+	}
+	
+	function capturePhoto(){
+        //alert("capture button working");
+    navigator.camera.getPicture(gotPic,failHandler,{quality:50, destinationType:0,  
+	sourceType : Camera.PictureSourceType.CAMERA,
+  	allowEdit : true,
+  	encodingType: Camera.EncodingType.JPEG,
+  	popoverOptions: CameraPopoverOptions,
+  	saveToPhotoAlbum: true  });
+}   
+
+function choosePhoto(){
+        //alert("capture button working");
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:50});
+}  
  
 	
 	function gotPic(data) {
@@ -106,17 +131,9 @@ $(document).on("pageshow", "upload.html", function(e, ui) {
 		//$("#takePicBtn").text("Add Pic").button("refresh");
 	}
  
-});
+//});
 
-function capturePhoto(){
-        //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:1,quality:60});
-}   
-
-function choosePhoto(){
-        //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0,quality:60});
-}   
+ 
 
 
 function okay(message) {
