@@ -1,13 +1,14 @@
-var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
-var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
+
+ 
+function loadContent(){
+  
+  var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
+	var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
  
 //Initialize Parse
 Parse.initialize(parseAPPID,parseJSID);
  
 var NoteOb = Parse.Object.extend("photos");
- 
-/*$(document).on("pageshow", "index.html", function(e, ui) {
-  $.mobile.loading("show");
  
 	var query = new Parse.Query(NoteOb);
 	query.limit(10);
@@ -20,7 +21,7 @@ var NoteOb = Parse.Object.extend("photos");
 			for(var i=0; i<results.length; i++) {
 				//Lame - should be using a template
 				s += "<p>";
-				s += "<h3>Note " + results[i].createdAt + "</h3>";
+				s += "<h3>Picture " + results[i].createdAt + "</h3>";
 				s += results[i].get("text");
 				var pic = results[i].get("picture");
 				if(pic) {
@@ -28,13 +29,13 @@ var NoteOb = Parse.Object.extend("photos");
 				}
 				s += "</p>";
 			}
-			$("#home div[data-role=content]").html(s);
+			$("index.html div[data-role=content]").html(s);
 		},error:function(e) {
 			$.mobile.loading("hide");
  
 		}
 	});
-});*/
+}
 
  
 //$(document).on("pageshow", "upload.html", function(e, ui) {
