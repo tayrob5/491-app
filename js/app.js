@@ -29,7 +29,7 @@ var NoteOb = Parse.Object.extend("photos");
 				}
 				s += "</p>";
 			}
-			$("index.html div[data-role=content]").html(s);
+			$("div[data-role=content]").html(s);
 		},error:function(e) {
 			$.mobile.loading("hide");
  
