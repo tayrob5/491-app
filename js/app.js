@@ -57,7 +57,6 @@ function onDeviceReady() {
 		var NoteOb = Parse.Object.extend("photos");
 		 
 		var caption = $("#caption").val();
-		if (imagedata = "") return;
  
 		/*
 		A bit complex - we have to handle an optional pic save
