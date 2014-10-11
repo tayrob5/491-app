@@ -1,4 +1,4 @@
-<script>var Parse = require('parse-1.2.8.js')
+var Parse = require('parse-1.2.8.js')
   var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
 	var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
  
@@ -7,7 +7,6 @@ Parse.initialize(parseAPPID,parseJSID);
  
 var NoteOb = Parse.Object.extend("photos");
 
-</script>
 
  
 function loadContent(){
@@ -31,7 +30,7 @@ function loadContent(){
 				}
 				s += "</p>";
 			}
-			$("div[class=content]").html(s);
+			$("class=content").html(s);
 		},error:function(e) {
 			$.mobile.loading("hide");
  
