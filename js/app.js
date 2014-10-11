@@ -1,4 +1,4 @@
-var Parse = require('parse-1.2.8.js')
+
   var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
 	var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
  
@@ -9,7 +9,7 @@ var NoteOb = Parse.Object.extend("photos");
 
 
  
-function loadContent(){
+/*function loadContent(){
  
 	var query = new Parse.Query(NoteOb);
 	query.limit(10);
@@ -37,6 +37,7 @@ function loadContent(){
 		}
 	});
 }
+*/
 
  
 //$(document).on("pageshow", "upload.html", function(e, ui) {
