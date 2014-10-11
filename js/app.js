@@ -1,7 +1,4 @@
-
- 
-function loadContent(){
-  
+<script>var Parse = require('parse-1.2.8.js')
   var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
 	var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
  
@@ -9,6 +6,11 @@ function loadContent(){
 Parse.initialize(parseAPPID,parseJSID);
  
 var NoteOb = Parse.Object.extend("photos");
+
+</script>
+
+ 
+function loadContent(){
  
 	var query = new Parse.Query(NoteOb);
 	query.limit(10);
@@ -29,7 +31,7 @@ var NoteOb = Parse.Object.extend("photos");
 				}
 				s += "</p>";
 			}
-			$("div[data-role=content]").html(s);
+			$("div[class=content]").html(s);
 		},error:function(e) {
 			$.mobile.loading("hide");
  
