@@ -1,15 +1,13 @@
-
-  var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
-	var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
+var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
+var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
  
 //Initialize Parse
 Parse.initialize(parseAPPID,parseJSID);
  
 var NoteOb = Parse.Object.extend("photos");
-
-
  
-/*function loadContent(){
+/*$(document).on("pageshow", "index.html", function(e, ui) {
+  $.mobile.loading("show");
  
 	var query = new Parse.Query(NoteOb);
 	query.limit(10);
@@ -22,7 +20,7 @@ var NoteOb = Parse.Object.extend("photos");
 			for(var i=0; i<results.length; i++) {
 				//Lame - should be using a template
 				s += "<p>";
-				s += "<h3>Picture " + results[i].createdAt + "</h3>";
+				s += "<h3>Note " + results[i].createdAt + "</h3>";
 				s += results[i].get("text");
 				var pic = results[i].get("picture");
 				if(pic) {
@@ -30,36 +28,25 @@ var NoteOb = Parse.Object.extend("photos");
 				}
 				s += "</p>";
 			}
-			$("class=content").html(s);
+			$("#home div[data-role=content]").html(s);
 		},error:function(e) {
 			$.mobile.loading("hide");
  
 		}
 	});
-}
-*/
+});*/
 
  
-//$(document).on("pageshow", "upload.html", function(e, ui) {
- document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-	console.log("onDeviceReady()");
+$(document).on("pageshow", "upload.html", function(e, ui) {
+ 
 	var imagedata = "";
-}
-	
  
-	function submitBtn(){
-		
-		var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
-		var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
+	$("#submitBtn").on("touchend", function(e) {
+		e.preventDefault();
+		//$(this).attr("disabled","disabled").button("refresh");
  
-		//Initialize Parse
-		Parse.initialize(parseAPPID,parseJSID);
-		 
-		var NoteOb = Parse.Object.extend("photos");
-		 
 		var caption = $("#caption").val();
+		if(caption == '') return;
  
 		/*
 		A bit complex - we have to handle an optional pic save
@@ -97,22 +84,7 @@ function onDeviceReady() {
 			cleanUp();
  
 		}
-	}
-	
-	function capturePhoto(){
-        //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{quality:50, destinationType:0,  
-	sourceType : Camera.PictureSourceType.CAMERA,
-  	allowEdit : true,
-  	encodingType: Camera.EncodingType.JPEG,
-  	popoverOptions: CameraPopoverOptions,
-  	saveToPhotoAlbum: true  });
-}   
-
-function choosePhoto(){
-        //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:50});
-}  
+	});
  
 	
 	function gotPic(data) {
@@ -134,9 +106,17 @@ function choosePhoto(){
 		//$("#takePicBtn").text("Add Pic").button("refresh");
 	}
  
-//});
+});
 
- 
+function capturePhoto(){
+        //alert("capture button working");
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:1,quality:60});
+}   
+
+function choosePhoto(){
+        //alert("capture button working");
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0,quality:60});
+}   
 
 
 function okay(message) {
