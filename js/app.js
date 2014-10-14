@@ -65,6 +65,7 @@ function onDeviceReady() {
 			var parseFile = new Parse.File("mypic.jpg", {base64:imagedata});
 			console.log(parseFile);
 				parseFile.save().then(function() {
+					console.log("after save");
 					var note = new NoteOb();
 					note.set("text",caption);
 					note.set("picture",parseFile);
@@ -98,12 +99,12 @@ function onDeviceReady() {
 	
 	function capturePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{quality:50, destinationType:0 });
+    navigator.camera.getPicture(gotPic,failHandler,{destinationType:0, quality:10 });
 }   
 
 function choosePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:50});
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:10});
 }  
  
 	
