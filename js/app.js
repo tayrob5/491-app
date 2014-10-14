@@ -30,25 +30,27 @@
 	});
 });*/
 
- 
+var imagedata = "";
+var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
+var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
+var NoteOb;
 //$(document).on("pageshow", "upload.html", function(e, ui) {
  document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	console.log("onDeviceReady()");
-	var imagedata = "";
 	
-	var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
-		var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
+	
+
  
 		//Initialize Parse
 		Parse.initialize(parseAPPID,parseJSID);
 		
-		var NoteOb = Parse.Object.extend("photos");
+		NoteOb = Parse.Object.extend("photos");
 }
 	
  
-	function submitBtn(){
+	function pushPhoto(){
 		
 		
 		 
@@ -61,7 +63,7 @@ function onDeviceReady() {
 		*/
 		if(imagedata != "") {
 			var parseFile = new Parse.File("mypic.jpg", {base64:imagedata});
-			console.log(parseFile);
+			console.log("This is the parseFile: " + parseFile);
 				parseFile.save().then(function() {
 					console.log("after save");
 					var note = new NoteOb();
@@ -109,6 +111,7 @@ function choosePhoto(){
 	function gotPic(data) {
 		console.log('got here');
 		imagedata = data;
+		pushPhoto();
 		//$("#takePicBtn").text("Picture Taken!").button("refresh");
 	}
 	
