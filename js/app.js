@@ -28,9 +28,9 @@ var NoteOb = Parse.Object.extend("photos");
 				}
 				s += "</p>";
 			}
-			$("#home div[data-role=content]").html(s);
+			$("#result").html(s)
 		},error:function(e) {
-			$.mobile.loading("hide");
+			
  
 		}
 	});
