@@ -1,4 +1,10 @@
-
+var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
+var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
+ 
+//Initialize Parse
+Parse.initialize(parseAPPID,parseJSID);
+ 
+var NoteOb = Parse.Object.extend("photos");
  
 /*$(document).on("pageshow", "index.html", function(e, ui) {
   $.mobile.loading("show");
@@ -22,39 +28,33 @@
 				}
 				s += "</p>";
 			}
-			$("#result").html(s)
+			$("#home div[data-role=content]").html(s);
 		},error:function(e) {
-			
+			$.mobile.loading("hide");
  
 		}
 	});
 });*/
 
-var imagedata = "";
-var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
-var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
-var NoteOb;
+ 
 //$(document).on("pageshow", "upload.html", function(e, ui) {
  document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	console.log("onDeviceReady()");
-	
-	
-
- 
-		//Initialize Parse
-		Parse.initialize(parseAPPID,parseJSID);
-		
-		NoteOb = Parse.Object.extend("photos");
+	var imagedata = "";
 }
 	
  
-	function pushPhoto(){
+	function submitBtn(){
 		
-		
+		var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
+		var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
+ 
+		//Initialize Parse
+		Parse.initialize(parseAPPID,parseJSID);
 		 
-		//var NoteOb = Parse.Object.extend("photos");
+		var NoteOb = Parse.Object.extend("photos");
 		 
 		var caption = $("#caption").val();
  
@@ -63,9 +63,8 @@ function onDeviceReady() {
 		*/
 		if(imagedata != "") {
 			var parseFile = new Parse.File("mypic.jpg", {base64:imagedata});
-			console.log("This is the parseFile: " + parseFile);
+			console.log(parseFile);
 				parseFile.save().then(function() {
-					console.log("after save");
 					var note = new NoteOb();
 					note.set("text",caption);
 					note.set("picture",parseFile);
@@ -99,19 +98,18 @@ function onDeviceReady() {
 	
 	function capturePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{destinationType:0, quality:10 });
+    navigator.camera.getPicture(gotPic,failHandler,{quality:50, destinationType:0 });
 }   
 
 function choosePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:10});
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:50});
 }  
  
 	
 	function gotPic(data) {
 		console.log('got here');
 		imagedata = data;
-		pushPhoto();
 		//$("#takePicBtn").text("Picture Taken!").button("refresh");
 	}
 	
