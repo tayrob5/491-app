@@ -64,7 +64,7 @@ function onDeviceReady() {
 		var caption = $("#caption").val();
  
 		/*
-		A bit complex - we have to handle an optional pic save
+		Take care of saving the image
 		*/
 		if(imagedata != "") {
 			var parseFile = new Parse.File("mypic.jpg", {base64:imagedata});
