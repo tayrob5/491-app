@@ -1,9 +1,13 @@
 var lat;
 var long;
+
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
  
 function displayContent(){
 	
-	navigator.geolocation.getCurrentPosition(gotGeo, errorGeo,{enableHighAccuracy: true });
+	
 	
 	var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
 	var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
@@ -40,12 +44,13 @@ function displayContent(){
 }
 
  
-//$(document).on("pageshow", "upload.html", function(e, ui) {
- document.addEventListener("deviceready", onDeviceReady, false);
+
 
 function onDeviceReady() {
 	console.log("onDeviceReady()");
 	var imagedata = "";
+	navigator.geolocation.getCurrentPosition(gotGeo, errorGeo,{enableHighAccuracy: true });
+	
 }
 
 function gotGeo(position){
@@ -53,10 +58,14 @@ function gotGeo(position){
 	lat=position.coords.latitude;
 	long=position.coords.longitude;
 	
+	console.(lat + long);
+	
 	
 }
 
-function errorGeo(){
+function errorGeo(error){
+	console.(error.message);
+	
 	
 	
 }
@@ -71,7 +80,7 @@ function errorGeo(){
 	 
 		//Initialize Parse
 		Parse.initialize(parseAPPID,parseJSID);
-		 
+				 
 		var NoteOb = Parse.Object.extend("photos");
 
 		    
