@@ -48,6 +48,8 @@ function onDeviceReady() {
  
 	function submitBtn(){
 		
+		$('#spinner').show();
+		
 		var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
 		var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
  
