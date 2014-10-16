@@ -1,4 +1,5 @@
-
+var lat;
+var long;
  
 function displayContent(){
 	
@@ -20,14 +21,13 @@ function displayContent(){
 			var s = "";
 			for(var i=0; i<results.length; i++) {
 				//Lame - should be using a template
-				s += "<p>";
-				s += "<h3>Note " + results[i].createdAt + "</h3>";
-				s += results[i].get("text");
+				s += "<div class='row'> <div class='large-12 columns'> <div class='callout panel'>";
 				var pic = results[i].get("picture");
 				if(pic) {
 					s += "<br/><img src='" + pic.url() + "'>";
 				}
-				s += "</p>";
+				s += results[i].get("text");
+				s += "</div> </div> </div>"
 			}
 			$("#content").html(s);
 		},error:function(e) {
@@ -44,6 +44,20 @@ function displayContent(){
 function onDeviceReady() {
 	console.log("onDeviceReady()");
 	var imagedata = "";
+	navigator.geolocation.getCurrentPosition(gotGeo, errorGeo);
+}
+
+function gotGeo(position){
+	
+	lat=position.coords.latitude;
+	long=position.coords.longitude;
+	
+	
+}
+
+function errorGeo(){
+	
+	
 }
 	
  
@@ -73,6 +87,7 @@ function onDeviceReady() {
 					var note = new NoteOb();
 					note.set("text",caption);
 					note.set("picture",parseFile);
+					note.set("geopoint", lat, long);
 					note.save(null, {
 						success:function(ob) {
 							$('#spinner').hide();
@@ -104,12 +119,12 @@ function onDeviceReady() {
 	
 	function capturePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{quality:50, destinationType:0 });
+    navigator.camera.getPicture(gotPic,failHandler,{quality:40, destinationType:0 });
 }   
 
 function choosePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:50});
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:40});
 }  
  
 	
