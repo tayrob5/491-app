@@ -6,8 +6,7 @@ Parse.initialize(parseAPPID,parseJSID);
  
 var NoteOb = Parse.Object.extend("photos");
  
-/*$(document).on("pageshow", "index.html", function(e, ui) {
-  $.mobile.loading("show");
+function displayContent(){
  
 	var query = new Parse.Query(NoteOb);
 	query.limit(10);
@@ -15,7 +14,6 @@ var NoteOb = Parse.Object.extend("photos");
  
 	query.find({
 		success:function(results) {
-			$.mobile.loading("hide");
 			var s = "";
 			for(var i=0; i<results.length; i++) {
 				//Lame - should be using a template
@@ -28,13 +26,13 @@ var NoteOb = Parse.Object.extend("photos");
 				}
 				s += "</p>";
 			}
-			$("#home div[data-role=content]").html(s);
+			$("#content").html(s);
 		},error:function(e) {
-			$.mobile.loading("hide");
+			
  
 		}
 	});
-});*/
+}
 
  
 //$(document).on("pageshow", "upload.html", function(e, ui) {
