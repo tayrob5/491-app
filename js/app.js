@@ -82,13 +82,13 @@ function errorGeo(){
 		*/
 		if(imagedata != "") {
 			var parseFile = new Parse.File("mypic.jpg", {base64:imagedata});
-			var geopoint = new Parse.GeoPoint.current()
+			var point = new Parse.GeoPoint(lat, long);
 			console.log(parseFile);
 				parseFile.save().then(function() {
 					var note = new NoteOb();
 					note.set("text",caption);
 					note.set("picture",parseFile);
-					note.set("geopoint", geopoint);
+					note.set("geopoint", point);
 					note.save(null, {
 						success:function(ob) {
 							$('#spinner').hide();
