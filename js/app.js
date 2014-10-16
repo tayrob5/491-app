@@ -3,6 +3,8 @@ var long;
  
 function displayContent(){
 	
+	navigator.geolocation.getCurrentPosition(gotGeo, errorGeo,{enableHighAccuracy: true });
+	
 	var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
 	var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
  
@@ -44,7 +46,6 @@ function displayContent(){
 function onDeviceReady() {
 	console.log("onDeviceReady()");
 	var imagedata = "";
-	navigator.geolocation.getCurrentPosition(gotGeo, errorGeo);
 }
 
 function gotGeo(position){
