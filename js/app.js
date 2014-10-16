@@ -72,7 +72,8 @@ function onDeviceReady() {
 					note.set("picture",parseFile);
 					note.save(null, {
 						success:function(ob) {
-							$.mobile.changePage("index.html");
+							$('#spinner').hide();
+							window.location.href = "index.html";
 						}, error:function(e) {
 							console.log("Oh crap", e);
 						}
