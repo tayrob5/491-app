@@ -61,7 +61,8 @@ function gotGeo(position){
 }
 
 function errorGeo(error){
-	console.log(error.message);
+	   alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');
 	
 	
 	
