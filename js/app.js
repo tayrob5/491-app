@@ -58,7 +58,8 @@ function gotGeo(position){
 	lat=position.coords.latitude;
 	long=position.coords.longitude;
 	
-	console.log(lat + long);
+	console.log(lat);
+	console.log(long);
 	
 	
 }
