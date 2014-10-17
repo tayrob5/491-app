@@ -7,7 +7,7 @@ var long;
  
 function displayContent(){
 	
-	onLoad();
+	onDeviceReady();
 	
 	var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
 	var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
@@ -81,9 +81,7 @@ function errorGeo(error){
 		//Initialize Parse
 		Parse.initialize(parseAPPID,parseJSID);
 				 
-		var NoteOb = Parse.Object.extend("photos");
-
-		    
+		var NoteOb = Parse.Object.extend("photos");    
 		 
 		var caption = $("#caption").val();
  
@@ -130,12 +128,12 @@ function errorGeo(error){
 	
 	function capturePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{quality:40, destinationType:0 });
+    navigator.camera.getPicture(gotPic,failHandler,{quality:30, destinationType:0 });
 }   
 
 function choosePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:40});
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:30});
 }  
  
 	
