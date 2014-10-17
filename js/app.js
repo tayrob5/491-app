@@ -45,7 +45,7 @@ function displayContent(){
 function onDeviceReady() {
 	console.log("onDeviceReady()");
 	var imagedata = "";
-	navigator.geolocation.getCurrentPosition(gotGeo, errorGeo,{enableHighAccuracy: true });
+	navigator.geolocation.getCurrentPosition(gotGeo, errorGeo,{enableHighAccuracy: true, maximumAge: 5000, timeout: 5000, });
 	
 }
 
