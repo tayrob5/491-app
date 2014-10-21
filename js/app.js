@@ -15,9 +15,8 @@ function displayContent(){
 	
 	var myLocation = new Parse.GeoPoint({latitude: lat, longitude: long});
 	var query = new Parse.Query(NoteOb);
-	if (lat != ""){
-	query.withinMiles("geopoint", myLocation, 5);
-	}
+	
+	//query.withinMiles("geopoint", myLocation, 5);
 	var yesterday = new Date();
 	yesterday.setDate(yesterday.getDate()-1);
 	query.greaterThan("createdAt", yesterday);
