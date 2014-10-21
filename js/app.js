@@ -12,10 +12,15 @@ function displayContent(){
 	Parse.initialize(parseAPPID,parseJSID);
 	 
 	var NoteOb = Parse.Object.extend("photos");
+	
+	var myLocation = new Parse.GeoPoint({latitude: lat, longitude: long});
 
  
 	var query = new Parse.Query(NoteOb);
-	query.limit(10);
+	query.withinMiles("geopoint", myLocation, 5);
+	var yesterday = new Date();
+	yesterday.setDate(yesterday.getDate()-1);
+	query.greaterThan("createdAt", yesterday);
 	query.descending("createdAt");
  
 	query.find({
