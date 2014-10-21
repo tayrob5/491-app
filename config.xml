@@ -19,6 +19,7 @@ Pictures from around where you are		</description>
 		<preference name="webviewbounce" value="false" />
 		<preference name="DisallowOverscroll" value="true" />
 		
+		
 		<preference name="CameraUsesGeolocation" value=“false” />
 		<preference name="prerendered-icon" value="true" />
 		<preference name="stay-in-webview" value="true" />
@@ -52,6 +53,7 @@ Pictures from around where you are		</description>
 		<feature name="http://api.phonegap.com/1.0/geolocation"/>
 		<feature name="http://api.phonegap.com/1.0/media"/>
 		<feature name="http://api.phonegap.com/1.0/notification"/>
+		<gap:config-file platform="ios" parent="NSLocationAlwaysUsageDescription" overwrite="false"></gap:config-file> 
 		<gap:plugin name="org.apache.cordova.camera"  />
 		<gap:plugin name="org.apache.cordova.contacts"  />
 		<gap:plugin name="org.apache.cordova.device-orientation"  />
