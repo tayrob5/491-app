@@ -1,5 +1,6 @@
 var lat;
 var long;
+var myLocation;
 
  
 function displayContent(){
@@ -13,10 +14,10 @@ function displayContent(){
 	 
 	var NoteOb = Parse.Object.extend("photos");
 	
-	var myLocation = new Parse.GeoPoint({latitude: lat, longitude: long});
+	
 	var query = new Parse.Query(NoteOb);
 	
-	//query.withinMiles("geopoint", myLocation, 5);
+	query.withinMiles("geopoint", myLocation, 10);
 	var yesterday = new Date();
 	yesterday.setDate(yesterday.getDate()-1);
 	query.greaterThan("createdAt", yesterday);
@@ -51,6 +52,7 @@ function onDeviceReady() {
 	var imagedata = "";
 	navigator.geolocation.getCurrentPosition(gotGeo, errorGeo,{enableHighAccuracy: true, maximumAge: 5000, timeout: 5000 });
 	
+	
 }
 
 function gotGeo(position){
@@ -61,6 +63,7 @@ function gotGeo(position){
 	console.log(lat);
 	console.log(long);
 	
+	myLocation = new Parse.GeoPoint({latitude: lat, longitude: long});
 	
 }
 
