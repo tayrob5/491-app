@@ -64,6 +64,7 @@ function gotGeo(position){
 	console.log(long);
 	
 	myLocation = new Parse.GeoPoint({latitude: lat, longitude: long});
+	displayContent();
 	
 }
 
