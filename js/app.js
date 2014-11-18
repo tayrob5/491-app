@@ -33,6 +33,7 @@ function displayContent(){
 				if(pic) {
 					s += "<br/><img src='" + pic.url() + "' style='width: 100%;'>";
 				}
+				s += "</div> "
 				
 				s += "<p>"
 				
@@ -40,7 +41,7 @@ function displayContent(){
 				
 				s += "</p>"
 				
-				s += "</div> "
+				
 				
 				
 			}
