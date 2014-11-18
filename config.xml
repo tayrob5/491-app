@@ -18,6 +18,7 @@ Pictures from around where you are		</description>
 		<preference name="target-device" value="universal" />
 		<preference name="webviewbounce" value="false" />
 		<preference name="DisallowOverscroll" value="true" />
+		<preference name="StatusBarOverlaysWebView" value="false" />
 		
 		
 		<preference name="CameraUsesGeolocation" value=“false” />
@@ -67,6 +68,7 @@ Pictures from around where you are		</description>
 		<gap:plugin name="org.apache.cordova.splashscreen"  />
 		<gap:plugin name="org.apache.cordova.vibration"  />
         <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
+		<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
 		
 		<gap:config-file platform="ios" 
 		parent="NSLocationAlwaysUsageDescription" overwrite="false"> 
