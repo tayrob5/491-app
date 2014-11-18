@@ -28,13 +28,13 @@ function displayContent(){
 			var s = "";
 			for(var i=0; i<results.length; i++) {
 				//Lame - should be using a template
-				s += "<div class='row'> <div class='large-12 columns'> <div class='callout panel'>";
+				s += "<div class='row'> <div class='large-12 columns'> ";
 				var pic = results[i].get("picture");
 				if(pic) {
-					s += "<br/><img src='" + pic.url() + "'>";
+					s += "<br/><img src='" + pic.url() + "' style='width: 100%;'>";
 				}
 				s += results[i].get("text");
-				s += "</div> </div> </div>"
+				s += "</div> </div>"
 			}
 			$("#content").html(s);
 		},error:function(e) {
