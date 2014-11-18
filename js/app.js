@@ -86,13 +86,15 @@ function updateContent(distance){
 					s += "<br/><img src='" + pic.url() + "' style='width: 100%;'>";
 				}
 				
+				s += "</div> "
+				
 				s += "<p>"
 				
 				s += results[i].get("text");
 				
 				s += "</p>"
 				
-				s += "</div> "
+				
 				
 				
 			}
@@ -194,12 +196,12 @@ function errorGeo(error){
 	
 	function capturePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{quality:30, destinationType:0 });
+    navigator.camera.getPicture(gotPic,failHandler,{quality:25, destinationType:0 });
 }   
 
 function choosePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:30});
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:25});
 }  
  
 	
