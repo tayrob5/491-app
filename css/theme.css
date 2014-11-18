@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.icon-bar > *:hover {
+background: #91C1F9;
+}
+a:hover, a:focus {
+color: #91C1F9;
+}
+element.style {
+}
+.icon-bar {
+width: 100%;
+font-size: 0;
+display: inline-block;
+background: #2F5A99;
+}
+
+.range-slider-handle {
+display: inline-block;
+position: absolute;
+z-index: 1;
+top: -0.3125rem;
+width: 2rem;
+height: 1.375rem;
+border: 1px solid none;
+cursor: pointer;
+background: #2F5A99;
+}
+
+.range-slider-handle:hover {
+background: #91C1F9;
+}
