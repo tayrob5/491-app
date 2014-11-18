@@ -48,6 +48,51 @@ function displayContent(){
 	});
 }
 
+function updateContent(distance){
+	
+	
+	var parseAPPID = "sqjjNOSioMoqfwC5aEw4OAoJsPCF1hbWeBLSKB59";
+	var parseJSID = "EQZJbB4ZeutL6IeyJP5NN2ZHXCgp0ml920CDilX9";
+ 
+	//Initialize Parse
+	Parse.initialize(parseAPPID,parseJSID);
+	 
+	var NoteOb = Parse.Object.extend("photos");
+	
+	
+	var query = new Parse.Query(NoteOb);
+	
+	query.withinMiles("geopoint", myLocation, distance);
+	var yesterday = new Date();
+	yesterday.setDate(yesterday.getDate()-1);
+	query.greaterThan("createdAt", yesterday);
+	query.descending("createdAt");
+ 
+	query.find({
+		success:function(results) {
+			var s = "";
+			for(var i=0; i<results.length; i++) {
+				//Lame - should be using a template
+				s += "<div class='row'>  ";
+				var pic = results[i].get("picture");
+				if(pic) {
+					s += "<br/><img src='" + pic.url() + "' style='width: 100%;'>";
+				}
+				
+				s += results[i].get("text");
+				
+				s += "</div> "
+				
+				
+			}
+			$("#content").html(s);
+		},error:function(e) {
+			
+ 
+		}
+	});
+}
+
  
 
 
