@@ -34,7 +34,11 @@ function displayContent(){
 					s += "<br/><img src='" + pic.url() + "' style='width: 100%;'>";
 				}
 				
+				s += "<p>"
+				
 				s += results[i].get("text");
+				
+				s += "</p>"
 				
 				s += "</div> "
 				
