@@ -68,13 +68,7 @@ Pictures from around where you are		</description>
 		<gap:plugin name="org.apache.cordova.splashscreen"  />
 		<gap:plugin name="org.apache.cordova.vibration"  />
         <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
-		<gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
-		
-		<preference name="StatusBarOverlaysWebView" value="false" />
-				
-		<feature name="StatusBar">
-            <param name="ios-package" value="CDVStatusBar" onload="true" />
-        </feature>
+		<gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" version="1.1.0" />
 		
 		<gap:config-file platform="ios" 
 		parent="NSLocationAlwaysUsageDescription" overwrite="false"> 
