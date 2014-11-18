@@ -62,6 +62,8 @@ function updateContent(distance){
 	
 	var query = new Parse.Query(NoteOb);
 	
+	console.log("updating content for " + distance);
+	
 	query.withinMiles("geopoint", myLocation, distance);
 	var yesterday = new Date();
 	yesterday.setDate(yesterday.getDate()-1);
@@ -79,7 +81,11 @@ function updateContent(distance){
 					s += "<br/><img src='" + pic.url() + "' style='width: 100%;'>";
 				}
 				
+				s += "<p>"
+				
 				s += results[i].get("text");
+				
+				s += "</p>"
 				
 				s += "</div> "
 				
