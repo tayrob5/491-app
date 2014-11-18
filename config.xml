@@ -21,7 +21,7 @@ Pictures from around where you are		</description>
 
 		
 		
-		<preference name="CameraUsesGeolocation" value=“false” />
+		<preference name="CameraUsesGeolocation" value="false" />
 		<preference name="prerendered-icon" value="true" />
 		<preference name="stay-in-webview" value="true" />
 		<preference name="ios-statusbarstyle" value="black-opaque" />
