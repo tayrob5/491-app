@@ -33,8 +33,11 @@ function displayContent(){
 				if(pic) {
 					s += "<br/><img src='" + pic.url() + "' style='width: 100%;'>";
 				}
-				s += results[i].get("text");
 				s += "</div> "
+				s += "<div class='row'> <div class='large-12 column' ";
+				s += results[i].get("text");
+				s += "</div> </div>";
+				
 			}
 			$("#content").html(s);
 		},error:function(e) {
