@@ -208,6 +208,7 @@ function choosePhoto(){
 	function gotPic(data) {
 		console.log('got here');
 		imagedata = data;
+		cameraPic.src = data;
 		//$("#takePicBtn").text("Picture Taken!").button("refresh");
 	}
 	
