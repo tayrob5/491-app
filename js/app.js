@@ -208,7 +208,7 @@ function choosePhoto(){
 	function gotPic(data) {
 		console.log('got here');
 		imagedata = data;
-		cameraPic.src = data;
+		cameraPic.src = "data:image/jpeg;base64," + data;
 		//$("#takePicBtn").text("Picture Taken!").button("refresh");
 	}
 	
