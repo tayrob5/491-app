@@ -196,12 +196,12 @@ function errorGeo(error){
 	
 	function capturePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{quality:25, destinationType:0 });
+    navigator.camera.getPicture(gotPic,failHandler,{quality:10, destinationType:0 });
 }   
 
 function choosePhoto(){
         //alert("capture button working");
-    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:25});
+    navigator.camera.getPicture(gotPic,failHandler,{sourceType:0, destinationType:0, quality:10});
 }  
  
 	
