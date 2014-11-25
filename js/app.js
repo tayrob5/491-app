@@ -1,6 +1,7 @@
 var lat;
 var long;
 var myLocation;
+var page;
 
  
 function displayContent(){
@@ -106,12 +107,63 @@ function updateContent(distance){
 	});
 }
 
+function loadMore(){
+	
+	var displayLimit=10;
+
+	
+	var NoteOb = Parse.Object.extend("photos");
+	
+	
+	var query = new Parse.Query(NoteOb);
+	
+	query.withinMiles("geopoint", myLocation, 10);
+	var yesterday = new Date();
+	yesterday.setDate(yesterday.getDate()-1);
+	query.greaterThan("createdAt", yesterday);
+	query.descending("createdAt");
+	query.limit(displayLimit);
+	query.skip(page * limit);
  
+	query.find({
+		success:function(results) {
+			var s = "";
+			for(var i=0; i<results.length; i++) {
+				//Lame - should be using a template
+				s += "<div class='row'>  ";
+				var pic = results[i].get("picture");
+				if(pic) {
+					s += "<br/><img src='" + pic.url() + "' style='width: 100%;'>";
+				}
+				s += "</div> "
+				
+				s += "<p>"
+				
+				s += results[i].get("text");
+				
+				s += "</p>"
+				
+				
+				
+				
+			}
+			$("#content").html(s);
+			page++;
+		},error:function(e) {
+			
+ 
+		}
+	});
+	
+	
+	
+}
 
 
 function onDeviceReady() {
 	console.log("onDeviceReady()");
 	var imagedata = "";
+	page=1;
 	navigator.geolocation.getCurrentPosition(gotGeo, errorGeo,{enableHighAccuracy: true, maximumAge: 5000, timeout: 5000 });
 	
 	
