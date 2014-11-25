@@ -149,7 +149,7 @@ function loadMore(){
 				
 				
 			}
-			$("#content").after(s);
+			$("#content").append(s);
 			page++;
 		},error:function(e) {
 			
