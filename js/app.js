@@ -147,7 +147,7 @@ function loadMore(){
 				
 				
 			}
-			$("#content").html(s);
+			$("#content").after(s);
 			page++;
 		},error:function(e) {
 			
