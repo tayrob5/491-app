@@ -23,6 +23,7 @@ function displayContent(){
 	yesterday.setDate(yesterday.getDate()-1);
 	query.greaterThan("createdAt", yesterday);
 	query.descending("createdAt");
+	query.limit(10);
  
 	query.find({
 		success:function(results) {
@@ -75,6 +76,7 @@ function updateContent(distance){
 	yesterday.setDate(yesterday.getDate()-1);
 	query.greaterThan("createdAt", yesterday);
 	query.descending("createdAt");
+	query.limit(10);
  
 	query.find({
 		success:function(results) {
