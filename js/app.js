@@ -153,7 +153,7 @@ function loadMore(){
 			}
 			console.log(page);
 			console.log(s);
-			$("#content").clone(s);
+			$("#content").append(s);
 			page++;
 		},error:function(e) {
 			
