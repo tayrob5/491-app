@@ -127,7 +127,7 @@ function loadMore(){
 	query.greaterThan("createdAt", yesterday);
 	query.descending("createdAt");
 	query.limit(displayLimit);
-	query.skip(page * limit);
+	query.skip(page * displayLimit);
  
 	query.find({
 		success:function(results) {
