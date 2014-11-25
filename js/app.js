@@ -111,6 +111,8 @@ function updateContent(distance){
 
 function loadMore(){
 	
+	console.log(page);
+	
 	var displayLimit=10;
 
 	
@@ -149,6 +151,8 @@ function loadMore(){
 				
 				
 			}
+			console.log(page);
+			console.log(s);
 			$("#content").append(s);
 			page++;
 		},error:function(e) {
