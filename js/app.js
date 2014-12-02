@@ -109,7 +109,7 @@ function updateContent(distance){
 	});
 }
 
-function loadMore(){
+/*function loadMore(){
 	
 	console.log(page);
 	
@@ -163,7 +163,7 @@ function loadMore(){
 	
 	
 	
-}
+}*/
 
 
 function onDeviceReady() {
